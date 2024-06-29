@@ -8,3 +8,21 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+
+body {
+  min-height: 100vh;
+  max-width: 2008px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: apercu, sans-serif;
+  font-weight: 300;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(at top left, #a9c7ee, #bfc8d4);
+}
+
+h3 {
+  font-size: 24px;
+}
