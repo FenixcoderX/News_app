@@ -58,6 +58,7 @@ export function useWebSocket(userName) {
     });
 
     return () => {
+      setNotifications([])
       socket.off('connect');
       socket.off('notification');
       socket.disconnect();
