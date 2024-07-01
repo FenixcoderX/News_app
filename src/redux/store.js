@@ -15,16 +15,17 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const loggerMiddleware = store => next => action => {
-    console.log('Previous State:', store.getState());
-    next(action);
-    console.log('Next State:', store.getState());
-  };
+// const loggerMiddleware = store => next => action => {
+//     console.log('Previous State:', store.getState());
+//     next(action);
+//     console.log('Next State:', store.getState());
+//   };
 
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }).concat(loggerMiddleware),
+    getDefaultMiddleware({ serializableCheck: false }),
+  //.concat(loggerMiddleware),
 });
 
 export const persistor = persistStore(store);
