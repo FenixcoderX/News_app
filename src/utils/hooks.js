@@ -45,7 +45,7 @@ export function useWebSocket(userName) {
 
     // Connect to websocket
     socket.on('connect', () => {
-      console.log('Connection to server successful!');
+      // console.log('Connection to server successful!');
     });
 
     socket.on('connect_error', (error) => {
