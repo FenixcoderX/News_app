@@ -14,10 +14,7 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const userName = useSelector((state) => state.user.userName);
   const displayName = userName === '' ? 'Guest' : userName;
-  console.log('userName:', userName === '');
-
   const notifications = useWebSocket(userName);
-  console.log('messages:', notifications);
 
   /**
    * Logs out the authenticated user
@@ -122,11 +119,17 @@ const NavBar = () => {
             >
               <HiUser className="icon-user" />
             </span>
-            <ul className="dropdown-menu nav-bar-dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li className='nav-bar-notification-bell-container'>
+            <ul
+              className="dropdown-menu nav-bar-dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <li className="nav-bar-notification-bell-container">
                 <NotificationBell messageCount={notifications.length} />
               </li>
-              <li id="nav-user-name" className="drop-down-container nav-bar-drop-down-container">
+              <li
+                id="nav-user-name"
+                className="drop-down-container nav-bar-drop-down-container"
+              >
                 {displayName}
               </li>
               <li className="drop-down-container nav-bar-drop-down-container">
